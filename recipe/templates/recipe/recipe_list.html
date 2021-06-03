@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style type="text/css">
+        .row{
+            margin:0px auto
+        }
+    </style>
+</head>
+<!-- python manage.py runserver -->
+<body>
+     <div style="height:50px"></div>
+     <div class="container-fluid">
+         <div class="row">
+             {% for recipe in rd %}
+             <div class="col-md-4">
+                    <div class="thumbnail">
+                      <a href="/recipe/recipe_before/?no={{recipe.no}}">
+                        <img src="{{recipe.poster}}" alt="Lights" style="width:100%">
+                        <div class="caption">
+                          <p>{{recipe.title}}</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+             {% endfor %}
+         </div>
+         <hr>
+         <div class="row">
+             {% for c in cd %}
+              <img src="{{c.poster}}" width="150" height="100">
+             {% endfor %}
+         </div>
+     </div>
+</body>
+</html>
